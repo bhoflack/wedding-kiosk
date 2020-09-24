@@ -1,0 +1,14 @@
+{
+  "name": "index-cloud-storage",
+  "version": "1.0.0",
+  "description": "Index cloud storage in firebase",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "firebase-admin": "^9.2.0"
+  }
+}
