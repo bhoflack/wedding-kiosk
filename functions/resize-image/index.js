@@ -8,7 +8,6 @@ const tmp = require('tmp');
 
 const db = admin.firestore();
 
-
 exports.resize = async (event) => {
 
       console.log(`got event ${JSON.stringify(event)}`);
@@ -31,9 +30,10 @@ exports.resize = async (event) => {
       await storage.bucket(bucketName).file(objectName).download({
         destination: tmpFile.name,
       });
-      await sharp(tmpFile.name).resize(64).toFile(thumbFile.name);
 
-      const thumbName = `thumb@64_${objectName}`;
+      await sharp(tmpFile.name).resize(1080).toFile(thumbFile.name);
+
+      const thumbName = `thumb@1080_${objectName}`;
       await storage.bucket(bucketName).upload(
           thumbFile.name,
           { destination: thumbName, },
